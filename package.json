@@ -4,7 +4,7 @@
   "description": "control LittleBits Arduino module with Firmata protocol",
   "main": "lib/littlebits-arduino.js",
   "scripts": {
-    "test": "grunt lint",
+    "test": "grunt test",
     "build": "grunt build",
     "watch": "grunt"
   },
@@ -24,10 +24,12 @@
     "grunt-contrib-coffee": "*",
     "grunt-contrib-watch": "*",
     "grunt-jsonlint": "*",
-    "grunt-notify": "*"
+    "grunt-notify": "*",
+    "grunt-simple-mocha": "^0.4.0"
   },
   "dependencies": {
-    "arduino-firmata": "^0.3.2"
+    "arduino-firmata": "^0.3.2",
+    "eventemitter2": "^0.4.14"
   },
   "repository": {
     "type": "git",

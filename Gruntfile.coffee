@@ -8,11 +8,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-jsonlint'
+  grunt.loadNpmTasks 'grunt-simple-mocha'
   grunt.loadNpmTasks 'grunt-notify'
 
-  grunt.registerTask 'lint',    [ 'jsonlint', 'coffeelint' ]
-  grunt.registerTask 'build',   [ 'lint', 'coffee' ]
-  grunt.registerTask 'default', [ 'build', 'watch' ]
+  grunt.registerTask 'build',   [ 'coffee' ]
+  grunt.registerTask 'test',    [ 'build', 'jsonlint', 'coffeelint', 'simplemocha' ]
+  grunt.registerTask 'default', [ 'test', 'watch' ]
 
   grunt.initConfig
 
@@ -51,6 +52,15 @@ module.exports = (grunt) ->
           ext: '.js'
         }]
 
+    simplemocha:
+      options:
+        ui: 'bdd'
+        reporter: 'spec'
+        compilers: 'coffee:coffee-script'
+        ignoreLeaks: no
+      dist:
+        src: [ 'tests/test_*.coffee' ]
+
     watch:
       options:
         interrupt: yes
@@ -59,4 +69,4 @@ module.exports = (grunt) ->
           '**/*.{coffee,json}'
           '!node_modules/**'
         ]
-        tasks: [ 'build' ]
+        tasks: [ 'test' ]
