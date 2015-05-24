@@ -1,0 +1,40 @@
+{
+  "name": "littlebits-arduino",
+  "version": "0.0.1",
+  "description": "control LittleBits Arduino module with Firmata protocol",
+  "main": "lib/littlebits-arduino.js",
+  "scripts": {
+    "test": "grunt lint",
+    "build": "grunt build",
+    "watch": "grunt"
+  },
+  "keywords": [
+    "littlebits",
+    "arduino"
+  ],
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-errors": "*",
+    "coffee-script": "^1.9.2",
+    "coffeelint": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-coffeelint": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-jsonlint": "*",
+    "grunt-notify": "*"
+  },
+  "dependencies": {
+    "arduino-firmata": "^0.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shokai/node-littlebits-arduino.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shokai/node-littlebits-arduino/issues"
+  },
+  "homepage": "https://github.com/shokai/node-littlebits-arduino"
+}
